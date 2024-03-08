@@ -25,8 +25,8 @@ trebleNode.type = 'highshelf';
 function loadMP3Files(folderPath) {
     
     const files = [
-        '*.mp3'
-        // Add more file paths here
+        '/src/assets/audio/Journey.mp3',
+        '/src/assets/audio/Pick Sides v3.mp3'
     ];
 
     // Create playlist items
@@ -41,14 +41,6 @@ function loadMP3Files(folderPath) {
     });
 }
 
-fetch('/get-mp3-files')
-    .then(response => response.json())
-    .then(mp3Files => {
-        const folderPath = 'src/assets/audio';
-        createPlaylist(mp3Files, folderPath);
-    })
-    .catch(error => console.error('Error fetching MP3 files:', error));
-
 function createPlaylist(mp3Files, folderPath) {
     mp3Files.forEach(file => {
         const li = document.createElement('li');
@@ -62,9 +54,17 @@ function createPlaylist(mp3Files, folderPath) {
     });
 }
 
-loadMP3Files('src/assets/audio');
+fetch('/get-mp3-files')
+    .then(response => response.json())
+    .then(mp3Files => {
+        const folderPath = 'src/assets/audio';
+        createPlaylist(mp3Files, folderPath);
+    })
+    .catch(error => console.error('Error fetching MP3 files:', error));
 
-// Event listeners for the mixer sliders
+// loadMP3Files('src/assets/audio');
+
+// Event listeners for mixer sliders
 bassSlider.addEventListener('input', () => {
     bassNode.gain.value = bassSlider.value;
 });

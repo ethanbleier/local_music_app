@@ -24,7 +24,7 @@
 				--dark-color: #333; /* Dark color for text/backgrounds */
 				--black: #000;
 				--light-color: #F9F9F9; /* Light color for backgrounds */
-				--background-color: #5ae40a;
+				--background-color: #3e4b98;
 			}
 
 			/* Layout */
@@ -78,10 +78,9 @@
 		</style>
 	</head>
 <body>
-	<h1>X MUSIC</h1>
+	<h1>BLEIER</h1>
 	<div id="player">
 		<audio id="audio-player" controls></audio>
-		<div id="playlist"></div>
 	</div>
 	<div id="mixer">
 		<label for="bass">Bass:</label>
@@ -89,6 +88,14 @@
 		<label for="treble">Treble:</label>
 		<input type="range" id="treble" min="-10" max="10" value="0">
 	</div>
+</body>
+	<button onclick="navigateToMP3List()">View MP3 List</button>
+	<script>
+		// JavaScript function to navigate to MP3 list page
+		function navigateToMP3List() {
+			window.location.href = "/mp3-list";
+		}
+	</script>
 	<script src="app.js"></script>
 </body>
 </html>

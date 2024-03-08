@@ -4,7 +4,7 @@
   "description": "A local music player web app with a mixer",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "http-server": "^14.1.1"
