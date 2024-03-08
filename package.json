@@ -1,0 +1,17 @@
+{
+  "name": "music-player",
+  "version": "0.0.1",
+  "description": "A local music player web app with a mixer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "author": "Ethan Bleier",
+  "license": "MIT"
+}
