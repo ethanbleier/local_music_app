@@ -1,1 +1,1 @@
-# music
+# small music app
