@@ -9,11 +9,84 @@
 
 			/* Typography */
 			body {
-				font-family: 'Montserrat', sans-serif;
-				color: #333;
-				/* margin: 0;
-				padding: 20px; */
+				font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+				color: #333; /* Dark text color */
+			}
+
+			h1, h2, h3 {
+				font-weight: 700; /* Bold headings */
+			}
+
+			/* Colors */
+			:root {
+				--primary-color: #FF5851; /* Vibrant primary color (e.g., reddish-orange) */
+				--secondary-color: #FFC857; /* Contrasting secondary color (e.g., yellow-orange) */
+				--dark-color: #333; /* Dark color for text/backgrounds */
+				--light-color: #F9F9F9; /* Light color for backgrounds */
+			}
+
+			/* Layout */
+			body {
+				background-color: var(--light-color);
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			/* Buttons */
+			button, .btn {
+				background-color: var(--primary-color);
+				color: #FFF;
+				border: none;
+				border-radius: 4px;
+				padding: 10px 20px;
+				font-weight: 600;
+				text-transform: uppercase;
+				transition: background-color 0.3s ease;
+			}
+
+			button:hover, .btn:hover {
+				background-color: var(--secondary-color);
+			}
+
+			/* Player */
+			#player {
+				background-color: var(--dark-color);
+				color: #FFF;
+				padding: 20px;
+				border-radius: 8px;
+			}
+
+			/* Mixer */
+			#mixer {
+				margin-top: 40px;
+			}
+
+			#mixer label {
+				font-weight: 600;
+				margin-right: 10px;
+			}
+
+			#mixer input[type="range"] {
+				accent-color: var(--primary-color); /* Custom range slider color */
 			}
 		</style>
 	</head>
+<body>
+	<h1>Local Music Player</h1>
+	<div id="player">
+		<audio id="audio-player" controls></audio>
+		<div id="playlist"></div>
+	</div>
+	<div id="mixer">
+		<label for="bass">Bass:</label>
+		<input type="range" id="bass" min="-10" max="10" value="0">
+		<label for="treble">Treble:</label>
+		<input type="range" id="treble" min="-10" max="10" value="0">
+	</div>
+	<script src="app.js"></script>
+</body>
 </html>
