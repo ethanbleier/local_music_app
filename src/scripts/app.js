@@ -23,12 +23,9 @@ trebleNode.type = 'highshelf';
 
 // Function to load MP3 files from a local folder
 function loadMP3Files(folderPath) {
-    // You'll need to implement this function to read the MP3 files from the specified folder
-    // and create the playlist
+    
     const files = [
-        'path/to/file1.mp3',
-        'path/to/file2.mp3',
-        'path/to/file3.mp3',
+        '*.mp3'
         // Add more file paths here
     ];
 
@@ -44,8 +41,7 @@ function loadMP3Files(folderPath) {
     });
 }
 
-// Load MP3 files from a local folder (replace 'path/to/folder' with the actual folder path)
-loadMP3Files('path/to/folder');
+loadMP3Files('src/assets/audio');
 
 // Event listeners for the mixer sliders
 bassSlider.addEventListener('input', () => {
