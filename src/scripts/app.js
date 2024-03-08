@@ -41,6 +41,27 @@ function loadMP3Files(folderPath) {
     });
 }
 
+fetch('/get-mp3-files')
+    .then(response => response.json())
+    .then(mp3Files => {
+        const folderPath = 'src/assets/audio';
+        createPlaylist(mp3Files, folderPath);
+    })
+    .catch(error => console.error('Error fetching MP3 files:', error));
+
+function createPlaylist(mp3Files, folderPath) {
+    mp3Files.forEach(file => {
+        const li = document.createElement('li');
+        li.textContent = file;
+        li.addEventListener('click', () => {
+            const filePath = `${folderPath}/${file}`;
+            audioPlayer.src = filePath;
+            audioPlayer.play();
+        });
+        playlistElement.appendChild(li);
+    });
+}
+
 loadMP3Files('src/assets/audio');
 
 // Event listeners for the mixer sliders
